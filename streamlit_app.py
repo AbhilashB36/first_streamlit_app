@@ -57,8 +57,6 @@ streamlit.write('The user entered ', fruit_choice)
 
 
 
-
-
 #Snowflake-related functions
 def get_fruit_load_list():
   with my_cnx.cursor() as my_cur:
@@ -75,8 +73,7 @@ if streamlit.button('Get Fruit Load list'):
   streamlit.dataframe(my_data_rows)
   
   
-  
-  streamlit.stop()
+streamlit.stop()
 #The line shown below will tell your py file to use the library you added to the project. 
 import snowflake.connector
 

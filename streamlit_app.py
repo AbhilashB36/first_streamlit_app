@@ -31,7 +31,7 @@ fruits_to_show = my_fruit_list.loc[fruits_selected]
 # Display the table on the page.
 streamlit.dataframe(fruits_to_show)
 
-
+streamlit.header('View Our Fruit List - Add Your Favorites!')
 #Create Function
 def get_fruityvice_data(this_fruit_choice):
   fruityvice_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_choice)
@@ -67,7 +67,7 @@ def get_fruit_load_list():
   
   
 #Add a button to load the fruit
-if streamlit.button('Get Fruit Load list'):
+if streamlit.button('Get Fruit List'):
   my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
   my_data_rows = get_fruit_load_list()
   streamlit.dataframe(my_data_rows)
